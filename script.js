@@ -1,23 +1,60 @@
 function getComputerChoice() {
-    const computerChoice = ['rock', 'paper', 'scissors'];
-    return computerChoice[Math.floor(Math.random() * computerChoice.length)];
+    let choice = ['rock', 'paper', 'scissors'];
+    return choice[Math.floor(Math.random() * choice.length)];
 }
 
+function getPlayerChoice() {
+    let userChoice = prompt('Choose rock, paper or scissors.').toLowerCase();
+    console.log(userChoice);
+    return userChoice;
+}
 
-function playRound(playerSelection, computerSelection) {
-    if ((playerSelection == 'rock' && computerSelection == 'scissors') 
-    || (playerSelection == 'paper' && computerSelection == 'rock') 
-    || (playerSelection == 'scissors' && computerSelection == 'paper')) {
-        return `You have won! ${playerSelection} beats ${computerSelection}.`
-    }   else if (playerSelection == computerSelection) {
-        return 'It\'s a draw!'
+function checkWinner(playerChoice, computerChoice) {
+    if ((playerChoice == 'rock' && computerChoice == 'scissors') 
+    || (playerChoice == 'paper' && computerChoice == 'rock') 
+    || (playerChoice == 'scissors' && computerChoice == 'paper')) {
+    return 'Player';
+}   else if (playerChoice == computerChoice) {
+    return 'Draw';
+}   else {
+    return 'Computer';
+}
+}
+
+function playRound(playerChoice, computerChoice) {
+    let result = checkWinner(playerChoice, computerChoice);
+    if (result == 'Player') {
+        return `You have won! ${playerChoice} beats ${computerChoice}.`
+    }   else if (result == 'Computer') {
+        return `You have lost! ${computerChoice} beats ${playerChoice}.`
     }   else {
-        return `You have lost! ${computerSelection} beats ${playerSelection}.`
+        return 'It is a draw!'
     }
-    
 }
 
-const playerSelection = 'rock';
-const computerSelection = getComputerChoice();
-console.log(computerSelection);
-console.log(playRound(playerSelection, computerSelection));
+function playGame() {
+    let playerScore = 0;
+    let computerScore = 0;
+    for (let i = 0; i < 5; i++) {
+    const playerChoice = getPlayerChoice();
+    const computerChoice = getComputerChoice();
+    console.log(playRound(playerChoice, computerChoice));
+    if (checkWinner(playerChoice, computerChoice) == 'Player') {
+        playerScore++;
+        console.log(playerScore);
+    }   else if (checkWinner(playerChoice, computerChoice) == 'Computer') {
+        computerScore++;
+        console.log(computerScore);
+    
+    };
+}
+    if (playerScore > computerScore) {
+        console.log('Player is the winner this time!');
+    }   else if (playerScore < computerScore) {
+        console.log('Computer is the winner this time!');
+    }   else {
+        console.log('It is a draw this time!');
+    }
+}
+
+playGame();
