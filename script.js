@@ -5,6 +5,9 @@ function getComputerChoice() {
 
 function getPlayerChoice() {
     let userChoice = prompt('Choose rock, paper or scissors.').toLowerCase();
+    while (userChoice == '' || userChoice == null) {
+        userChoice = prompt('Choose rock, paper or scissors.').toLowerCase();
+    }
     console.log(userChoice);
     return userChoice;
 }
@@ -16,8 +19,10 @@ function checkWinner(playerChoice, computerChoice) {
     return 'Player';
 }   else if (playerChoice == computerChoice) {
     return 'Draw';
-}   else {
-    return 'Computer';
+}   else if ((playerChoice == 'scissors' && computerChoice == 'rock') 
+    || (playerChoice == 'rock' && computerChoice == 'paper') 
+    || (playerChoice == 'paper' && computerChoice == 'scissors')) {
+        return 'Computer';
 }
 }
 
