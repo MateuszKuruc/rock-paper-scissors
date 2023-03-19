@@ -42,10 +42,11 @@ function playGame() {
     if (checkWinner(playerChoice, computerChoice) == 'Player') {
         playerScore++;
         console.log('Current Player score:', playerScore);
+        console.log('Current Computer score:', computerScore);
     }   else if (checkWinner(playerChoice, computerChoice) == 'Computer') {
         computerScore++;
-        console.log('Current Computer score:',computerScore);
-    
+        console.log('Current Player score:', playerScore);
+        console.log('Current Computer score:', computerScore);
     };
 }
     if (playerScore > computerScore) {
