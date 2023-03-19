@@ -41,13 +41,17 @@ function playGame() {
     console.log(playRound(playerChoice, computerChoice));
     if (checkWinner(playerChoice, computerChoice) == 'Player') {
         playerScore++;
+        console.log('--------------------');
         console.log('Current Player score:', playerScore);
         console.log('Current Computer score:', computerScore);
     }   else if (checkWinner(playerChoice, computerChoice) == 'Computer') {
         computerScore++;
+        console.log('--------------------');
         console.log('Current Player score:', playerScore);
         console.log('Current Computer score:', computerScore);
-    };
+    }   else {
+        console.log('--------------------');
+    }
 }
     if (playerScore > computerScore) {
         console.log('Player is the winner this time!');
