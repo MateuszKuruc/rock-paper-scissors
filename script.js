@@ -35,16 +35,16 @@ function playRound(playerChoice, computerChoice) {
 function playGame() {
     let playerScore = 0;
     let computerScore = 0;
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; (playerScore || computerScore) < 5; i++) {
     const playerChoice = getPlayerChoice();
     const computerChoice = getComputerChoice();
     console.log(playRound(playerChoice, computerChoice));
     if (checkWinner(playerChoice, computerChoice) == 'Player') {
         playerScore++;
-        console.log(playerScore);
+        console.log('Current Player score:', playerScore);
     }   else if (checkWinner(playerChoice, computerChoice) == 'Computer') {
         computerScore++;
-        console.log(computerScore);
+        console.log('Current Computer score:',computerScore);
     
     };
 }
