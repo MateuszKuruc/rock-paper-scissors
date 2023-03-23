@@ -84,6 +84,7 @@ function resetGame() {
     document.getElementById('playerChoiceDisplay').innerHTML = ''
     document.getElementById('computerChoiceDisplay').innerHTML = ''
     document.getElementById('writeResult').innerHTML = ''
+    document.getElementById('reset').style.display = 'none';
 }
 
 let buttons = document.querySelectorAll('.btn');
@@ -97,7 +98,7 @@ button.addEventListener('click', () => {
 }))
 
 const reset = document.getElementById('reset');
-reset.addEventListener('click', resetGame)
+reset.addEventListener('click', resetGame);
 
 let computerChoice = getComputerChoice();
 let playerChoice
