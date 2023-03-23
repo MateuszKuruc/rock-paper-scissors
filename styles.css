@@ -1,0 +1,64 @@
+body {
+    background-color: cadetblue;
+    text-align: center;
+}
+
+#header {
+    color:rgb(8, 21, 216)
+}
+
+#score {
+    color: purple;
+}
+
+#declareWinner {
+    color: sandybrown
+}
+
+#reset {
+    margin: auto;
+    background-color: rgb(177, 13, 150);
+    margin-top: 50px;
+}
+
+#reset:hover {
+    background-color: red;
+    transform: scale(1.4)
+}
+
+#reset:focus {
+    background-color: green;
+    color: black;
+    border-color: rgb(197, 228, 43);
+}
+
+button {
+font-weight: 900;
+background-color: rosybrown;
+padding: 10px;
+border: 5px solid black;
+border-radius: 10px;
+margin: 10px;
+width: 200px;
+}
+
+button:hover {
+    background-color: red;
+    border-color: rgb(242, 224, 24);
+    transform: scale(1.2);
+    color: white;
+}
+
+button:focus {
+    background-color: green;
+    border-color: black;
+}
+
+#actions {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 16px;
+    color: purple;
+    font-weight: bold;
+}
